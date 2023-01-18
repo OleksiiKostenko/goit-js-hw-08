@@ -34,6 +34,5 @@ const SimpleLightbox = new SimpleLightbox('.gallery a', {
     captionDelay: 250,
     captionSelector: 'img',
     captionType: 'attr',
-    captionsData: 'alt',
-});
+    captionsData: 'alt', });
 
