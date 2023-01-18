@@ -36,4 +36,4 @@ const SimpleLightbox = new SimpleLightbox('.gallery a', {
     captionType: 'attr',
     captionsData: 'alt',
 });
-console.log(galleryItems);
+
