@@ -29,9 +29,5 @@ galleryWrapp.append(...element);
 galleryWrapp.addEventListener('click', (event) => {
     event.preventDefault();
 })
-const SimpleLightbox = new SimpleLightbox('.gallery a', {
-    captionDelay: 250,
-    captionSelector: 'img',
-    captionType: 'attr',
-    captionsData: 'alt', });
+const SimpleLightbox = new SimpleLightbox('.gallery a');
 
