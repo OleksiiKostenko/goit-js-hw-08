@@ -12,9 +12,23 @@ player.on('timeupdate', throttle(onPlay, 1000));
 
 
  function onPlay(evt) {
-    localStorage.setItem(CURRENT_TIME_VIDEO, evt.seconds);
-};
+    if(CURRENT_TIME_VIDEO){
+    localStorage.setItem(CURRENT_TIME_VIDEO, evt.seconds)};
+    };
 
-const currentTime = localStorage.getItem(CURRENT_TIME_VIDEO);
+const currentTimes = localStorage.getItem(CURRENT_TIME_VIDEO);
 
-player.setCurrentTime(currentTime);
+
+player.setCurrentTime(currentTimes).then(function(seconds) {
+    // seconds = the actual time that the player seeked to
+}).catch(function(error) {
+    switch (error.name) {
+        case 'RangeError':
+            // the time was less than 0 or greater than the video’s duration
+            break;
+
+        default:
+            // some other error occurred
+            break;
+    }
+});

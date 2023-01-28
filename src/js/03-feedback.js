@@ -34,9 +34,9 @@ function populateFormArea() {
     formData = JSON.parse(savedData) || {};
 
     console.log(savedData);
-    
-        if (formData.email || formData.message) {
-            refs.input.value = formData.email;
-            refs.textarea.value = formData.message;
-    }
+
+    formData.email ? refs.input.value = formData.email : refs.input.value = "";
+    formData.message ? refs.textarea.value = formData.message : refs.textarea.value = "";
 };
+
+
